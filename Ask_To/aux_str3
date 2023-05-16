@@ -1,0 +1,12 @@
+:Summary::
+The code defines a function `rev_string` that takes a null-terminated string and reverses its characters in place using two nested loops. It first counts the number of characters in the string and initializes a pointer to the input string. The function then swaps the characters in the string by using a temporary variable to hold the value of the current character and swapping it with the previous character. The code assumes that the input string is null-terminated, which may lead to undefined behavior if this assumption is not met.
+
+:Discussin::
+This code defines a function `rev_string` that takes a pointer to a string (`char* s`) as input and reverses the characters in the string in place, i.e., it modifies the original string.
+
+The function first counts the number of characters in the input string by iterating over it until it encounters a null character (`\0`). It then initializes a pointer `str` to the input string.
+
+The function then uses two nested loops to reverse the string. The outer loop iterates over each character in the string, while the inner loop iterates over the characters before the current character and swaps them with the current character.
+
+The swapping is done by using a temporary variable `temp` to hold the value of the character at the current position, then copying the character from the previous position into the current position and the character from the current position into the previous position.
+

@@ -1,0 +1,20 @@
+:Summary::
+The provided code defines four functions that manage linked lists of two different types of nodes: `sep_list` and `line_list`. 
+
+`add_sep_node_end()` adds a separator to the end of a `sep_list`. `free_sep_list()` frees all nodes in a `sep_list`. `add_line_node_end()` adds a command line to the end of a `line_list`. `free_line_list()` frees all nodes in a `line_list`.
+
+These functions provide basic functionality for creating, appending to, and freeing linked lists of `sep_list` and `line_list` nodes.
+
+
+:Discuss::
+
+This code defines functions for creating and freeing linked lists of two different types of nodes: `sep_list` and `line_list`. 
+
+The `add_sep_node_end` function takes a double pointer to the head of a `sep_list`, and a `char` representing a separator. It allocates memory for a new `sep_list` node, sets its `separator` field to the given separator, sets its `next` field to `NULL`, and then appends it to the end of the linked list. If the given `head` pointer is `NULL`, it sets the `head` pointer to the newly created node and returns the `head`. Otherwise, it traverses the linked list to find the last node and appends the new node to the end. If memory allocation fails, the function returns `NULL`.
+
+The `free_sep_list` function takes a double pointer to the head of a `sep_list`, and iterates through the linked list to free each node. It sets the `head` pointer to `NULL` at the end to indicate that the list is now empty.
+
+The `add_line_node_end` function takes a double pointer to the head of a `line_list`, and a pointer to a `char` array representing a command line. It allocates memory for a new `line_list` node, sets its `line` field to the given command line, sets its `next` field to `NULL`, and then appends it to the end of the linked list. If the given `head` pointer is `NULL`, it sets the `head` pointer to the newly created node and returns the `head`. Otherwise, it traverses the linked list to find the last node and appends the new node to the end. If memory allocation fails, the function returns `NULL`.
+
+The `free_line_list` function takes a double pointer to the head of a `line_list`, and iterates through the linked list to free each node. It sets the `head` pointer to `NULL` at the end to indicate that the list is now empty.
+

@@ -1,0 +1,26 @@
+:Summary::
+This is a C program that includes several functions that check for syntax errors in user input for a shell program. The `check_syntax_error` function is the main function that calls the other functions to check for errors such as repeated separators, unexpected separators, and leading whitespace. The program prints an error message with the line number and a description of the error if it finds an error in the user input.
+
+:Discussion::
+This is a C code for a shell program that checks for syntax errors in a user's input. The program defines several functions to accomplish this task:
+
+1. `repeated_char` function: This function takes a string and an index as input and counts the number of times the character at the current index is repeated in the string. It does this by recursively comparing the character at the current index to the character at the previous index until it finds a character that is different. The function returns the number of times the character was repeated.
+
+2. `error_sep_op` function: This function takes a string and an index as input and checks for syntax errors in the string by analyzing the characters at the current index and the previous index. It checks for the following types of errors:
+
+   - If a semicolon (;) is encountered and the last character read was a pipe (|), an ampersand (&), or another semicolon (;), it returns the index of the semicolon.
+
+   - If a pipe (|) is encountered and the last character read was a semicolon (;) or an ampersand (&), it returns the index of the pipe.
+
+   - If an ampersand (&) is encountered and the last character read was a semicolon (;) or a pipe (|), it returns the index of the ampersand.
+
+   - If the current character is a space or a tab, it skips it and continues to the next character.
+
+   - If none of the above errors is encountered, the function recursively calls itself with the next character and the current index incremented by one.
+
+3. `first_char` function: This function takes a string and a pointer to an index as input and finds the index of the first non-space, non-tab character in the string. If the first character is a semicolon (;), a pipe (|), or an ampersand (&), the function returns -1.
+
+4. `print_syntax_error` function: This function takes a data structure, a string, an index, and a boolean as input and prints a syntax error message to standard error output. The function creates the error message by concatenating several strings and integers using the `strcat` and `itoa` functions.
+
+5. `check_syntax_error` function: This function takes a data structure and a string as input and checks for syntax errors in the string by calling the `first_char` and `error_sep_op` functions. If a syntax error is found, the function calls the `print_syntax_error` function and returns 1. Otherwise, it returns 0.
+

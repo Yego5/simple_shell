@@ -1,0 +1,26 @@
+:Summary::
+This code defines four functions that generate error messages for different scenarios in a shell program. The functions are:
+
+strcat_cd: concatenates an error message for the cd command, including the command name, the line number, the argument causing the error, and any illegal flags.
+error_get_cd: generates an error message for the cd command when the target directory cannot be found or accessed.
+error_not_found: generates an error message for a command that is not recognized or does not exist.
+error_exit_shell: generates an error message for the exit command when an illegal argument is provided.
+All of these functions take a data_shell struct as an input and return a dynamically allocated string containing the error message. The messages include information such as the name of the program, the line number where the error occurred, and details about the error itself.
+
+:Explain?::
+This is a C code for a shell program that includes several error-handling functions.
+
+The first function is strcat_cd(), which concatenates an error message for the cd command. It takes four parameters: a pointer to a data_shell structure, which contains information about the shell state; a string msg, which is either ": Illegal option " or ": can't cd to "; a string error, which will store the final error message; and a string ver_str, which is a string representation of the current line number. The function concatenates these strings together to create the error message, handling the case where the user provides an invalid option for the cd command. It returns a pointer to the error string.
+
+The second function is error_get_cd(), which generates an error message for the cd command when the get_cd() function encounters an error. It takes a pointer to a data_shell structure as its only parameter. It calls strcat_cd() to create the error message and returns the resulting string.
+
+The third function is error_not_found(), which generates an error message for when a command is not found. It takes a pointer to a data_shell structure as its only parameter. It creates an error message that includes the name of the command that was not found and the line number where the error occurred. It returns a pointer to the resulting error message string.
+
+The fourth function is error_exit_shell(), which generates an error message when the user provides an invalid argument to the exit command. It takes a pointer to a data_shell structure as its only parameter. It creates an error message that includes the name of the command, the line number, the argument that was provided, and a message indicating that the argument was invalid. It returns a pointer to the resulting error message string.
+
+All of these functions use other utility functions such as _strcpy(), _strcat(), _strlen(), and aux_itoa() to manipulate strings and perform integer-to-string conversions. The implementation of these utility functions is not included in the code shown.
+
+
+
+
+

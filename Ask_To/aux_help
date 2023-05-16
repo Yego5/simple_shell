@@ -1,0 +1,18 @@
+:Summary::
+The provided code defines five functions that provide help information for various built-in commands in a shell. Each function prints a help message that explains the usage and purpose of a specific command using the `write()` function to output the message to the standard output. The `_strlen()` function is used to determine the length of the help string before it is passed as an argument to the `write()` function. The functions cover the `env`, `setenv`, `unsetenv`, `exit`, and a general help command that lists all built-in commands and how to get more information on a specific command using the `help` command. The code provides useful help information for users of the shell.
+
+:Discussion::
+This code defines several functions that provide help information for various built-in commands of a shell. The functions have similar structure, each one starts by declaring a help string that explains the usage and purpose of the built-in command, and then uses the `write()` function to print the string to the standard output. The `_strlen()` function is used to determine the length of the help string, which is necessary to pass as the second argument to the `write()` function.
+
+Here's a brief summary of each function and what it does:
+
+- `aux_help_env()`: Prints a help message for the `env` command, which displays the environment variables of the shell.
+
+- `aux_help_setenv()`: Prints a help message for the `setenv` command, which sets the value of an environment variable.
+
+- `aux_help_unsetenv()`: Prints a help message for the `unsetenv` command, which unsets an environment variable.
+
+- `aux_help_general()`: Prints a general help message for the shell, which includes a list of all the built-in commands and instructions on how to use the `help` command to get more information on a specific command.
+
+- `aux_help_exit()`: Prints a help message for the `exit` command, which terminates the shell.
+

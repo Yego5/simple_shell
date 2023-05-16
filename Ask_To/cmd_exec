@@ -1,0 +1,24 @@
+:Summary::
+The code is a collection of functions that are used to execute command lines entered in a shell. 
+
+The `_which` function locates a command by searching for its location in the directories listed in the `PATH` environment variable. If the command is found, the function returns its location. 
+
+The `is_executable` function determines if the first argument of the command line is an executable file. If it is, the function returns the index of the first non-relative directory in the argument. 
+
+The `check_error_cmd` function checks if the user has permission to execute the command. 
+
+The `cmd_exec` function executes the command line by forking a new process. The child process then executes the command using the `execve` system call, while the parent waits for the child to terminate. The exit status of the child process is stored in the `data_shell` struct, which is used by the shell to determine whether the command was executed successfully or not.
+
+:Discussion::
+This is a code written in C language and contains a few functions used in a shell program. Here's a brief description of each function:
+
+1. `is_cdir` - This function checks whether a ":" is present in the current directory or not. It takes two parameters - a path string and an integer pointer. It returns 1 if the path is searchable in the "cd" command, 0 otherwise.
+
+2. `_which` - This function locates a command and returns its location. It takes two parameters - a command string and an array of environment variables. It returns the location of the command.
+
+3. `is_executable` - This function determines whether a given file is executable or not. It takes a pointer to a `data_shell` structure as a parameter. It returns 0 if the file is not executable, and the index of the first character of the file name if it is executable.
+
+4. `check_error_cmd` - This function verifies whether the user has the permission to access a directory. It takes two parameters - a directory string and a pointer to a `data_shell` structure. It returns 1 if there is an error, 0 otherwise.
+
+5. `cmd_exec` - This function executes command lines. It takes a pointer to a `data_shell` structure as a parameter. It returns 1.
+

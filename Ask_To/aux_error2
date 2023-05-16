@@ -1,0 +1,18 @@
+:Summary::
+The code contains two functions, error_env and error_path_126, which are used to generate error messages for a shell program. The error_env function constructs an error message for errors related to environment variables, while the error_path_126 function constructs an error message for file permission errors. Both functions take a pointer to a data_shell struct, allocate memory for the error message, and concatenate strings to construct the error message. The error message includes the program name, line number, the argument causing the error, and a specific error message. These functions are used to provide informative error messages to the user in case of errors in a shell program.
+
+
+::Discussion::
+The code consists of two functions error_env and error_path_126 that return error messages based on different situations in a shell program.
+
+The error_env function takes a pointer to a data_shell struct as an argument, which contains various data related to the shell program, such as the command line arguments and environment variables. The function first initializes some variables to store the error message and the necessary length for the error message. It then allocates memory for the error message based on the length calculated and checks if the allocation was successful. If the allocation failed, the function frees any previously allocated memory and returns NULL. If the allocation was successful, the function constructs the error message by concatenating the relevant strings and returns the error message.
+
+The error_path_126 function also takes a pointer to a data_shell struct as an argument. It initializes variables for the error message and the necessary length, allocates memory for the error message, and checks if the allocation was successful. If the allocation failed, the function frees any previously allocated memory and returns NULL. If the allocation was successful, the function constructs the error message by concatenating the relevant strings and returns the error message.
+
+In both functions, the error message is constructed by concatenating strings using the _strcpy and _strcat functions, which are presumably defined elsewhere in the code. The constructed error message includes the program name, the line number, the argument causing the error, and an error message specific to the situation.
+
+Overall, these functions seem to be used to generate informative error messages to be displayed to the user in case of errors related to environment variables or file permissions in a shell program.
+
+
+
+

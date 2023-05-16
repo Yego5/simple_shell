@@ -1,0 +1,18 @@
+:Summary::
+The `cd_shell` function is part of a shell program and is responsible for changing the current directory of the shell. It takes a pointer to a data structure as input and returns 1. The function compares the second argument passed to it with "$HOME", "~", and "--" using a custom string comparison function. If the argument is NULL or matches any of these strings, it calls the `cd_to_home` function. If the argument is "-", it calls the `cd_previous` function. If the argument is "." or "..", it calls the `cd_dot` function. Otherwise, it calls the `cd_to` function to change the current directory.
+
+:Discussion::
+
+
+This is a C function `cd_shell` that is part of a larger shell program and is responsible for changing the current directory of the shell. The function takes a pointer to a data structure `data_shell` as input and returns an integer value of 1.
+
+The function starts by declaring a pointer variable `dir` that is initialized with the second argument passed to the function (if any). Then, it compares the value of `dir` with three different strings: "$HOME", "~", and "--" using the custom string comparison function `_strcmp`. The results of these comparisons are stored in three integer variables `ishome`, `ishome2`, and `isddash`, respectively.
+
+If `dir` is `NULL` or if any of the comparisons with the above strings is true, the function calls the `cd_to_home` function and returns 1.
+
+If `dir` is "-" (the previous directory), the function calls the `cd_previous` function and returns 1.
+
+If `dir` is "." or ".." (the current or parent directory), the function calls the `cd_dot` function and returns 1.
+
+Otherwise, the function calls the `cd_to` function to change the current directory to the one specified in `dir`.
+

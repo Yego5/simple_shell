@@ -1,0 +1,10 @@
+:Summary::
+The code defines a shell program in C language that initializes a `data_shell` data structure with environment variables, process ID, input, arguments, status, and counter, and passes it to the `shell_loop()` function to run the shell program. The `free_data()` function frees the memory allocated to the `data_shell` structure, and the `main()` function calls it after the shell program ends. The `signal()` function is used to handle the `SIGINT` signal. If the `status` member of the `data_shell` structure is less than zero, the program returns 255, otherwise, it returns the `status` member.
+
+:Discussion::
+The code appears to be a part of a shell program in C language. It defines three functions: `free_data()`, `set_data()`, and `main()`, which are briefly explained below.
+
+`free_data()` function frees the memory allocated to the `data_shell` data structure, which contains the environment variables, process ID, input, arguments, status, and counter. It takes a pointer to the `data_shell` structure as an argument and frees the memory allocated to the `_environ` and `pid` members using the `free()` function.
+
+`set_data()` function initializes the `data_shell` data structure by setting its various members to their initial values. It takes a pointer to the `data_shell` structure and a character array `av` (argument vector) as arguments. It initializes the `av`, `input`, `args`, `status`, and `counter` members to NULL, sets the `_environ` member to the environment variables using the `environ` global variable, allocates memory for the `pid` member using the `aux_itoa()` function, which converts the process ID to a string, and sets it.
+

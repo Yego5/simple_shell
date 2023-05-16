@@ -1,0 +1,14 @@
+:Summary::
+The code contains three functions that deal with number conversion and string manipulation. `get_len()` function calculates the number of digits in an integer, `aux_itoa()` function converts an integer to a string, and `_atoi()` function converts a string to an integer. These functions can be useful in programming for tasks such as parsing input and output data or formatting output.
+
+:Discuss::
+
+
+The code consists of three functions: `get_len()`, `aux_itoa()`, and `_atoi()`, that deal with number conversion and string manipulation.
+
+`get_len()` function takes an integer as input and returns the number of digits in that integer. It first checks if the number is negative and if so, increments the length count by 1. Then it iteratively divides the input number by 10 and increments the length count until the quotient becomes less than 10. Finally, it returns the length count.
+
+`aux_itoa()` function converts an integer to a string. It takes an integer as input, calculates the length of the integer using the `get_len()` function, and allocates memory for a character array that is equal in size to the length of the integer plus one for the null terminator. It then checks if the input number is negative and if so, sets the first character of the character array to `-` and converts the input number to its absolute value. It then iteratively adds the last digit of the input number to the character array and divides the input number by 10 until the input number becomes 0. Finally, it returns the character array.
+
+`_atoi()` function converts a string to an integer. It takes a character pointer as input, iterates through the characters in the string, and extracts any numbers in the string. If the string starts with a `-` character, it sets a sign variable to negative and skips the `-` character. It then iteratively multiplies each digit by a power of 10 based on its position in the string, adds them together, and returns the resulting integer.
+

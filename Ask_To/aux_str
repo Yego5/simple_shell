@@ -1,0 +1,20 @@
+:Summary::
+The code includes five C functions that perform various operations on strings:
+
+1. `_strcat()` concatenates two strings together and returns a pointer to the resulting string.
+2. `_strcpy()` copies one string to another and returns a pointer to the destination string.
+3. `_strcmp()` compares two strings and returns an integer value indicating whether they are equal, greater than, or less than each other.
+4. `_strchr()` searches a string for a specified character and returns a pointer to its location within the string.
+5. `_strspn()` calculates the length of the initial segment of a string consisting only of characters present in a second, "accepted" string.
+
+:Discussion::
+This is a C code with five functions: `_strcat()`, `_strcpy()`, `_strcmp()`, `_strchr()`, and `_strspn()`. 
+
+The `_strcat()` function concatenates two strings. It takes two arguments, `dest` and `src`, which are pointers to strings. It first finds the end of `dest` string by iterating through it using a for loop. Then, it appends the characters of the `src` string to the end of `dest` string by iterating through `src` using another for loop. Finally, it appends a null character at the end of the concatenated string and returns a pointer to the destination string.
+
+The `_strcpy()` function copies a string pointed to by `src` to the memory pointed to by `dest`. It takes two arguments, `dest` and `src`, which are pointers to strings. It copies the characters of the `src` string to the `dest` string using a for loop, and then adds a null character at the end of the destination string. It returns a pointer to the destination string.
+
+The `_strcmp()` function compares two strings `s1` and `s2`. It takes two arguments, `s1` and `s2`, which are pointers to strings. It compares the characters of the two strings one by one using a for loop. If the characters are equal, it continues to the next character, and if they are not equal, it returns the difference between the ASCII values of the characters. If the end of either string is reached, it returns 0.
+
+The `_strchr()` function locates the first occurrence of the character `c` in the string `s`. It takes two arguments, `s` and `c`, which are a pointer to a string and a character, respectively. It iterates through the string `s` using a for loop until it finds the first occurrence of the character `c`. If it finds `c`, it returns a pointer to the location of `c` in the string `s`. If it does not find `c`, it returns a null pointer.
+

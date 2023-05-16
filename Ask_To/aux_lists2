@@ -1,0 +1,32 @@
+:Summary::
+This is a C language code that defines two functions `add_rvar_node()` and `free_rvar_list()`. 
+
+`add_rvar_node()` adds a new node to the end of the linked list. It takes four arguments, a pointer to a pointer to the head of the linked list, an integer that represents the length of the variable name, a pointer to a string that represents the value of the variable, and an integer that represents the length of the value of the variable. It allocates memory for a new node, sets the values of its fields using the arguments passed in, and adds it to the end of the linked list. The function returns the address of the head of the linked list.
+
+`free_rvar_list()` frees all the nodes of the linked list. It takes one argument, a pointer to a pointer to the head of the linked list. It iterates through the list, freeing each node one by one using `free()`. Finally, it sets the head pointer to NULL, indicating that the list is now empty. The function does nothing if the head pointer is already NULL.
+
+
+:Discussion::
+
+
+This is a C language code that defines two functions related to a singly linked list of `r_var` nodes, where each node contains three fields:
+
+- `len_var`: an integer that represents the length of a variable name.
+- `val`: a pointer to a string that represents the value of the variable.
+- `len_val`: an integer that represents the length of the value of the variable.
+
+The first function, `add_rvar_node()`, is used to add a new node to the end of the linked list. It takes four arguments:
+
+- `head`: a pointer to a pointer to the head of the linked list. This is a pointer to a pointer because the head may be updated if the list is currently empty.
+- `lvar`: an integer that represents the length of the variable name for the new node.
+- `val`: a pointer to a string that represents the value of the variable for the new node.
+- `lval`: an integer that represents the length of the value of the variable for the new node.
+
+The function allocates memory for a new `r_var` node using `malloc()`, sets the values of its fields using the arguments passed in, and adds it to the end of the linked list. If the list is currently empty, the new node becomes the head of the list. The function returns the address of the head of the linked list.
+
+The second function, `free_rvar_list()`, is used to free all the nodes of the linked list. It takes one argument:
+
+- `head`: a pointer to a pointer to the head of the linked list.
+
+The function first initializes two `r_var` pointers, `temp` and `curr`, to point to the head of the list. It then iterates through the list using a while loop, freeing each node one by one using `free()`. Finally, it sets the head pointer to NULL, indicating that the list is now empty. The function does nothing if the head pointer is already NULL.
+

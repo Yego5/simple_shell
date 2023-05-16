@@ -1,0 +1,12 @@
+:Summary::
+The code defines a function `get_builtin` which takes a command as input and returns a function pointer to the corresponding built-in function. The function uses an array of structs containing the names of built-in commands and their corresponding functions. It iterates through this array and compares the given command string with the names of built-in commands in the array. If a match is found, it returns the corresponding function pointer; otherwise, it returns NULL. This function is useful in a shell program for executing built-in commands entered by the user.
+
+:Discussion::
+This is a C code that defines a function `get_builtin` which takes a command as input and returns a function pointer to the corresponding built-in function. The built-in functions are defined in other parts of the code. 
+
+The function `get_builtin` uses an array of structs `builtin` which contains the names of built-in commands and their corresponding functions. The array is terminated by a struct with NULL values. 
+
+The function `get_builtin` iterates through this array using a `for` loop and checks if the given command matches any of the built-in commands. It does so by comparing the command string with the `name` field of each struct in the array using the `_strcmp` function. 
+
+If a match is found, the loop is terminated and the corresponding function pointer is returned. Otherwise, the loop continues until all the built-in commands have been checked. 
+

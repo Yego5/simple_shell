@@ -1,0 +1,16 @@
+:Summary::
+The code defines four functions related to environment variables in a shell program. The `copy_info` function creates a new environment variable by concatenating the name and value of an existing one. The `set_env` function sets a new value for an environment variable or creates a new one if it doesn't exist. The `_setenv` function is a wrapper function for `set_env`, called when the user inputs the command "setenv". The `_unsetenv` function deletes an existing environment variable, called when the user inputs the command "unsetenv".
+
+:Discussion::
+This code appears to be a part of a larger program, likely a Unix shell program, and defines several functions related to managing environment variables.
+
+The first function, `copy_info()`, takes two arguments `name` and `value`, both of type `char *`. It allocates memory for a new string to store the concatenation of `name`, "=", and `value`. It then copies each of these strings into the new string using `strcpy()` and `strcat()` functions. The resulting string is terminated with a null character and returned.
+
+The second function, `set_env()`, takes three arguments: `name`, `value`, and a pointer to a `data_shell` struct `datash`. It first loops through the array of environment variables stored in `datash->_environ`. For each variable, it uses `strdup()` to create a duplicate of the variable, uses `strtok()` to extract the name of the variable, and then compares it to the `name` argument using `_strcmp()`. If the names match, it frees the original variable and replaces it with a new one created using `copy_info()`.
+
+If no matching variable is found, it allocates memory for a new array of strings using `_reallocdp()` and adds the new variable to the end.
+
+The third function, `_setenv()`, takes a pointer to a `data_shell` struct as its only argument. It first checks if both `datash->args[1]` and `datash->args[2]` are not NULL. If either is NULL, it calls `get_error()` with an argument of -1 and returns 1. If both arguments are non-NULL, it calls `set_env()` with `datash->args[1]` and `datash->args[2]` as arguments.
+
+The fourth function, `_unsetenv()`, takes a pointer to a `data_shell` struct as its only argument. It first checks if `datash->args[1]` is not NULL. If it is NULL, it calls `get_error()` with an argument of -1 and returns 1. If it is non-NULL, it loops through the array of environment variables in `datash->_environ` using similar logic to `set_env()`. If it finds a matching variable, it allocates memory for a new array of strings, copies all the variables except for the one being removed into the new array, and then frees the original array and replaces it with the new one.
+
